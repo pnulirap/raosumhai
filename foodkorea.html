@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAO SUM HAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    body,td,th {
+	font-family: FlamingoThin;
+}
+    </style>
+</head>
+<body>
+<table width="199" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td width="199"><a href="index.html"><img src="images/home.png" width="200" height="100" alt=""/></a></td>
+    </tr>
+  </tbody>
+</table>
+    <header>
+      <h1><font color=#A0352C>สุ่มอาหารเกาหลี</h1>
+			<br>
+			<font/>
+        <button id="random-button">สุ่มอาหาร</button>
+    </header>
+    <main>
+        <h2 id="food-name">อาหารที่แนะนำ: </h2>
+        <img src="imageskorea/food.jpg" alt="Food Image" width="1000" id="food-image" />
+    </main>
+
+    <script>
+        const foods = [
+            { name: "คัลกุกซู", image: "imageskorea/kalguksu.jpg" },
+            { name: "จาจังมยอน", image: "imageskorea/jajangmyeon.jpg" },
+            { name: "ซัมกเยทัง", image: "imageskorea/samgyetang.jpg" },
+            { name: "คงกุกซู", image: "imageskorea/kongguksu.jpg" },
+            { name: "พาจอน", image: "imageskorea/pajeon.jpeg" },
+            { name: "ต๊อกโบกี", image: "imageskorea/tteokbokki.jpg" },
+            { name: "จัมปง", image: "imageskorea/jjamppong.jpg" },
+            { name: "มุลแนงเมียน", image: "imageskorea/mulnaengmyeon.jpg" },
+            { name: "ไก่ทอดเกาหลี", image: "imageskorea/koreanfiredchiken.jpg" },
+            { name: "รามยอน", image: "imageskorea/ramyeon.jpg" },
+        ];
+
+        document.getElementById('random-button').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * foods.length);
+            document.getElementById('food-name').textContent = "อาหารที่แนะนำ: " + foods[randomIndex].name;
+            document.getElementById('food-image').src = foods[randomIndex].image;
+        });
+    </script>
+</body>
+</html>

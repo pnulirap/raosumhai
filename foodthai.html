@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAO SUM HAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+    body {
+	background-color: #FFFFFF;
+}
+    body,td,th {
+	font-family: FlamingoThin;
+}
+    </style>
+</head>
+<body>
+   <table width="199" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td width="199"><a href="index.html"><img src="images/home.png" width="200" height="100" alt=""/></a></td>
+    </tr>
+  </tbody>
+</table>
+    <header>
+      <h1><font color=#A0352C>สุ่มอาหารไทย</h1>
+	<br> 
+	<font/>
+        <button id="random-button">สุ่มอาหาร</button>
+    </header>
+    <main>
+        <h2 id="food-name">อาหารที่แนะนำ: </h2>
+        <img src="imagesthai/food.jpg" alt= "Food Image" width="1000" id="food-image" />
+    </main>
+
+    <script>
+        const foods = [
+            { name: "ต้มยำกุ้ง", image: "imagesthai/tomyum.jpg" },
+            { name: "ผัดไทย", image: "imagesthai/padthai.jpg" },
+            { name: "แกงเขียวหวาน", image: "imagesthai/green-curry.jpg" },
+            { name: "ส้มตำ", image: "imagesthai/somtam.jpg" },
+            { name: "ข้าวซอย", image: "imagesthai/khao-soi.jpg" },
+            { name: "ก๋วยเตี๋ยวเรือ", image: "imagesthai/boat-noodle.jpg" },
+            { name: "ข้าวผัด", image: "imagesthai/fried-rice.jpg" },
+            { name: "ต้มจืด", image: "imagesthai/tomjood.jpg" },
+            { name: "แพนง", image: "imagesthai/panang.jpg" },
+            { name: "ลาบ", image: "imagesthai/lab.jpg" },
+			{ name: "ไข่พะโล้", image: "imagesthai/palo.jpg" },
+        ];
+
+        document.getElementById('random-button').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * foods.length);
+            document.getElementById('food-name').textContent = "อาหารที่แนะนำ: " + foods[randomIndex].name;
+            document.getElementById('food-image').src = foods[randomIndex].image;
+        });
+    </script>
+</body>
+</html>
